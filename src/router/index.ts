@@ -10,13 +10,16 @@ vue2 mode hash vue3 createWebHashHistory
 // 服务器渲染
 vue2 mode obstact vue3 createMemoryHistory*/
 const routes: Array<RouteRecordRaw> = [
-    {
+    {   //方式一，用path去进行跳转
         path: '/',
+        //方式二，对路由进行命名
+        name:'login',
         //import函数打包的时候会进行代码分割（信息化或者说是异步导入）
         component: () => import('../components/FirstPage.vue')
     },
     {
         path: '/hello',
+        name:'hello',
         component: () => import('../components/HelloWorld.vue')
     }
 ]

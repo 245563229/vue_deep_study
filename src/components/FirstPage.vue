@@ -1,5 +1,5 @@
 <template>
-  <div class="contentClas">
+  <div class="contentClass">
     测试1
   </div>
 </template>
@@ -10,7 +10,7 @@ onMounted(() => {
 })
 </script>
 <style lang='scss' scoped>
-.contentClas{
+.contentClass{
   background-color: red;
   width: 50px;
   height: 50px;

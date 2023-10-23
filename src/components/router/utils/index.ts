@@ -13,17 +13,31 @@ const routes: Array<RouteRecordRaw> = [
     {   //方式一，用path去进行跳转
         path: '/',
         //方式二，对路由进行命名
-        name:'login',
+        name: 'login',
         //import函数打包的时候会进行代码分割（信息化或者说是异步导入）
         component: () => import('../components/FirstPage.vue')
     },
     {
         path: '/hello',
-        name:'hello',
-        component: () => import('../components/HelloWorld.vue')
+        name: 'hello',
+        component: () => import('../components/HelloWorld.vue'),
+        children: [
+            //默认显示第一个子项的情况下第一个子项的path为空
+            {
+                path: '',
+                name: 'Child1',
+                component: () => import('../components/FirstChild.vue')
+            },
+            {
+                path: '/Child2',
+                name: 'Child2',
+                component: () => import('../components/SecondChild.vue')
+            }
+        ]
     }
 ]
 const router = createRouter({
+    // history:  createWebHistory(),
     history: createWebHashHistory(),
     routes
 })

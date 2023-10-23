@@ -1,18 +1,13 @@
 <template>
-  <div class="contentClass">
-    测试1
+  <div>
+    secondChild
   </div>
 </template>
-<script setup lang="ts">
+<script setup>
 import {ref, reactive, onMounted} from 'vue'
 
 onMounted(() => {
 })
 </script>
 <style lang='scss' scoped>
-.contentClass{
-  background-color: red;
-  width: 50px;
-  height: 50px;
-}
 </style>

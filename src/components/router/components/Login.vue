@@ -16,12 +16,12 @@ const router = useRouter()
 //模拟动态路由
 const activeRoute = [
   {
-    path: 'second',
+    path: '/second',
     name: 'second',
     component: 'SecondChild.vue'
   },
   {
-    path: 'third',
+    path: '/third',
     name: 'third',
     component: 'ThirdChild.vue'
   },
@@ -31,7 +31,7 @@ const getToken = () => {
   localStorage.setItem('token', 123456)
 }
 const newRoute = (id) => {
-  return import(`@/components/router/components/${id}`)
+  return import(`./${id}`)
 }
 
 const routerPush = () => {
@@ -41,8 +41,8 @@ const routerPush = () => {
       router.addRoute({
         path: item.path,
         name: item.name,
-        // component: () => import(`./${item.component}`)
-        component: newRoute(item.component)
+        component: () => import(`./${item.component}`)
+        // component: ()=> newRoute(item.component)
       })
     })
 

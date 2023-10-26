@@ -1,0 +1,4 @@
+1.vite全面抛弃了commonjs，采取了依赖预构建，所以使用require会产生报错。
+vite将commonjs或umd发布的依赖详转换为ESM语法规范（esbuild实现）或者说是import
+统一放到node_modules/.vite/deps
+基于这些特点，解决了路径问题。避免了很多js请求网络多包问题（因为被合并了）

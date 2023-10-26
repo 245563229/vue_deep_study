@@ -18,7 +18,7 @@
 import  RouterPage from '@/components/router/index.vue'
 // import RouterView from "@/components/router/RouterView.vue";
 
-
+console.log(import.meta.env)
 </script>
 <style scoped lang="scss">
 </style>
